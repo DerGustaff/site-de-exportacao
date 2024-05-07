@@ -21,29 +21,8 @@ class ContactController extends Controller
     /**
      * 
     */
-    public function submitForm(Request $request){
-        // Contact::create([
-        //     'name'=>$request->name,
-        //     'email'=>$request->email,
-        //     'telephone'=>$request->telephone,
-        //     'subject'=>$request->subject,
-        //     'message'=>$request->message
-        // ]);
-    
-        // return back()->withSuccess('Form sent.');
-
-        try{
-            Contact::create([
-                'name'=>$request->name,
-                'email'=>$request->email,
-                'telephone'=>$request->telephone,
-                'subject'=>$request->subject,
-                'message'=>$request->message
-            ]);
-        
-            
-        } catch(Exception $exception){
-            return back()->withErrors($exception->getMessage());
-        }
+    public function submitForm(Request $request)
+    {
+        dd($request->all());
     }
 }
